@@ -95,25 +95,32 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: RefreshIndicator(
-        onRefresh: () async {
-          _loadData();
-        },
-        child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildTrendingMovies(),
-              const SizedBox(height: 20),
-              _buildTrendingTV(),
-              const SizedBox(height: 20),
-              _buildPopularMovies(),
-              const SizedBox(height: 20),
-              _buildPopularTV(),
-            ],
+      body: Column(
+        children: [
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: () async {
+                _loadData();
+              },
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildTrendingMovies(),
+                    const SizedBox(height: 20),
+                    _buildTrendingTV(),
+                    const SizedBox(height: 20),
+                    _buildPopularMovies(),
+                    const SizedBox(height: 20),
+                    _buildPopularTV(),
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
+          const WorkingNativeAdWidget(),
+        ],
       ),
     );
   }

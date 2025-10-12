@@ -58,7 +58,7 @@ class _SearchScreenState extends State<SearchScreen>
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(100),
+          preferredSize: Size.fromHeight(_searchQuery.isNotEmpty ? 140 : 100),
           child: Column(
             children: [
               Padding(
@@ -212,13 +212,17 @@ class _SearchScreenState extends State<SearchScreen>
                     onFavorite: () {
                       movieProvider.addToFavorites(
                         movie.id,
-                        !movieProvider.favoriteMovies.any((m) => m.id == movie.id),
+                        !movieProvider.favoriteMovies.any(
+                          (m) => m.id == movie.id,
+                        ),
                       );
                     },
                     onWatchlist: () {
                       movieProvider.addToWatchlist(
                         movie.id,
-                        !movieProvider.watchlistMovies.any((m) => m.id == movie.id),
+                        !movieProvider.watchlistMovies.any(
+                          (m) => m.id == movie.id,
+                        ),
                       );
                     },
                     isFavorite: movieProvider.favoriteMovies.any(
@@ -303,7 +307,9 @@ class _SearchScreenState extends State<SearchScreen>
                         !tvProvider.watchlistTV.any((t) => t.id == tvShow.id),
                       );
                     },
-                    isFavorite: tvProvider.favoriteTV.any((t) => t.id == tvShow.id),
+                    isFavorite: tvProvider.favoriteTV.any(
+                      (t) => t.id == tvShow.id,
+                    ),
                     isInWatchlist: tvProvider.watchlistTV.any(
                       (t) => t.id == tvShow.id,
                     ),
