@@ -257,31 +257,34 @@ class _IntroScreenState extends State<IntroScreen> {
   Widget _buildLanguageSelectionPage() {
     return Padding(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 40),
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 40),
 
-          const Text(
-            'Select Your Language',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
+            const Text(
+              'Select Your Language',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
             ),
-          ),
 
-          const SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-          const Text(
-            'Choose your preferred language for the app',
-            style: TextStyle(fontSize: 16, color: Colors.grey),
-          ),
+            const Text(
+              'Choose your preferred language for the app',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
 
-          const SizedBox(height: 30),
+            const SizedBox(height: 30),
 
-          Expanded(
-            child: GridView.builder(
+            GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3,
@@ -339,8 +342,8 @@ class _IntroScreenState extends State<IntroScreen> {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -557,7 +560,7 @@ class _IntroScreenState extends State<IntroScreen> {
 
   Widget _buildNavigationButtons() {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 1,horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
