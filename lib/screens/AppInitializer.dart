@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:netmirror/screens/profile_screen.dart';
+import 'package:netmirror/screens/quiz_screen.dart';
 import 'package:netmirror/screens/tv_screen.dart';
 
 import '../services/intro_service.dart';
@@ -64,6 +65,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     const HomeScreen(),
     const MoviesScreen(),
     const TVScreen(),
+    const QuizScreen(),
     const ProfileScreen(),
   ];
 
@@ -92,6 +94,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Movies'),
             BottomNavigationBarItem(icon: Icon(Icons.tv), label: 'TV Shows'),
+            BottomNavigationBarItem(icon: Icon(Icons.quiz), label: 'Quiz'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
         ),

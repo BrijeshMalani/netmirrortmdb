@@ -69,8 +69,8 @@ class _SplashScreenState extends State<SplashScreen>
         Common.ads_open_count = data.rewardedFull1;
       }
       if (data.startAppRewarded.isNotEmpty) {
-        print('Ads open area: ${data.startAppRewarded}');
-        Common.adsopen = data.startAppRewarded;
+        print('show videos: ${data.startAppRewarded}');
+        Common.showVideos = data.startAppRewarded;
       }
 
       if (data.qurekaId.isNotEmpty) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Utils/common.dart';
 import '../models/movie.dart';
 import '../providers/movie_provider.dart';
 import '../services/tmdb_api_service.dart';
@@ -302,9 +303,9 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
               ),
             )
           : Column(
-            children: [
-              Expanded(
-                child: CustomScrollView(
+              children: [
+                Expanded(
+                  child: CustomScrollView(
                     slivers: [
                       _buildAppBar(),
                       SliverToBoxAdapter(
@@ -319,12 +320,15 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                               const SizedBox(height: 20),
                               _buildKeywords(),
                               const SizedBox(height: 20),
-                              _buildWatchProviders(),
-                              const SizedBox(height: 20),
+                              if (Common.showVideos == "2")
+                                _buildWatchProviders(),
+                              if (Common.showVideos == "2")
+                                const SizedBox(height: 20),
                               _buildCast(),
                               const SizedBox(height: 20),
-                              _buildVideos(),
-                              const SizedBox(height: 20),
+                              if (Common.showVideos == "2") _buildVideos(),
+                              if (Common.showVideos == "2")
+                                const SizedBox(height: 20),
                               _buildMovieStats(),
                               const SizedBox(height: 20),
                               _buildSimilarMovies(),
@@ -336,11 +340,11 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                       ),
                     ],
                   ),
-              ),
+                ),
 
-              const WorkingNativeAdWidget(),
-            ],
-          ),
+                const WorkingNativeAdWidget(),
+              ],
+            ),
     );
   }
 

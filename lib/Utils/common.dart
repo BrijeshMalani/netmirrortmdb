@@ -10,7 +10,7 @@ class Common {
   static DateTime? lastInterstitialAdTime;
   static bool isAppInBackground = false;
 
-  // Test Ad IDs (for development)
+  // // Test Ad IDs (for development)
   // static String bannar_ad_id = 'ca-app-pub-3940256099942544/6300978111';
   // static String interstitial_ad_id = 'ca-app-pub-3940256099942544/1033173712';
   // static String interstitial_ad_id1 = 'ca-app-pub-3940256099942544/1033173712';
@@ -30,7 +30,7 @@ class Common {
   static String terms_conditions = ''; //rewardedFull2
   static String ads_open_count = ''; //rewardedFull1
   static int ads_int_open_count = 1; //rewardedFull2
-  static String adsopen = ''; //startapprewarded 0-noads, 1-half ads, 2-all ads
+  static String showVideos = ''; //startapprewarded -  2-show videos
   static String Qurekaid = '';
   static String urlshow = ''; //fbnative
   static String playstore_link =
